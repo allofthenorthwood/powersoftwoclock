@@ -1,6 +1,6 @@
 # Powers of Two Clock
-A helpful clock for memorizing large powers of two. Just kidding. It just makes
-you look cool.
+A [helpful clock](http://michelletodd.github.io/powersoftwoclock/) for
+memorizing large powers of two. Just kidding. It just makes you look cool.
 
 # Printing Times
 Some times are better than other times because they make powers of two!
