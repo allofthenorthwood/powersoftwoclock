@@ -21,6 +21,10 @@
     .clock .time {
       color: #000;
     }
+    .clock .seconds {
+      color: #ccc;
+      padding-left: 10px;
+    }
   </style>
   <meta charset="utf-8">
   <title>Powers of 2 Clock</title>
@@ -150,7 +154,7 @@
             <span className="time">{printTime}</span>
             <span className="prefix">{pow.substr(idx + time.length)}</span>
           </span>
-          {padSecond}
+          <span className="seconds">{padSecond}</span>
         </div>
       );
     }
