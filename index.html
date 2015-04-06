@@ -23,7 +23,7 @@
     }
   </style>
   <meta charset="utf-8">
-  <title>????</title>
+  <title>Powers of 2 Clock</title>
 </head>
 <body>
   <div id="clock"></div>
@@ -73,29 +73,37 @@
   var Clock = React.createClass({
     getInitialState: function() {
       var d = new Date();
+      var second = d.getSeconds();
       var minute = d.getMinutes();
       var hour = d.getHours();
       return {
+        second: second,
         minute: minute,
         hour: hour > 12 ? hour - 12 : hour,
         fontSize: 20
       };
     },
     tick: function() {
-      var newMinute = this.state.minute + 1;
+      var newSecond = this.state.second  + 1;
+      var newMinute = this.state.minute;
       var newHour = this.state.hour;
+      if (newSecond >= 60) {
+        newSecond = 0;
+        newMinute = newMinute + 1;
+      }
       if (newMinute >= 60) {
         newMinute = 0;
         newHour = newHour + 1;
       }
       this.setState({
+        second: newSecond,
         minute: newMinute,
         hour: newHour
       });
     },
     componentDidMount: function() {
       this.adjustFontSize();
-      this.interval = setInterval(this.tick, 1000*60);
+      this.interval = setInterval(this.tick, 1000);
     },
     componentWillUnmount: function() {
       clearInterval(this.interval);
@@ -114,8 +122,10 @@
       }
     },
     render: function() {
+      var second = this.state.second;
       var minute = this.state.minute;
       var hour = this.state.hour;
+      var padSecond = second < 10 ? "0" + second : second + "";
       var padMinute = minute < 10 ? "0" + minute : minute + "";
       var printTime = hour + ":" + padMinute;
       var time = hour.toString() + padMinute;
@@ -140,6 +150,7 @@
             <span className="time">{printTime}</span>
             <span className="prefix">{pow.substr(idx + time.length)}</span>
           </span>
+          {padSecond}
         </div>
       );
     }
