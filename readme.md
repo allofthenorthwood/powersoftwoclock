@@ -15,8 +15,7 @@ that anyone does that definitely not of course not).
 
 Sometimes we can't.
 
-![2^286 = 1243308091024466605388455620367052100251140376993369293601 1:59
-94223289874253133343883264](/screenshots/powersoftwoclock-bigger.png?raw=true)
+![2^463 = 23817051317718446589520242536874132581700 12:01 07002038199303870846751188192899823151552628349788604516295066307994130118526061826166445047808](/screenshots/powersoftwoclock-bigger.png?raw=true)
 
 And yes, the powers are calculated on the fly instead of [insert alternate
 method here] because it's more fun that way!
